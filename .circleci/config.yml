@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: python:3.8-alpine
+    working_directory: ~/app
     steps:
       - checkout
       - run:
@@ -14,6 +15,9 @@ jobs:
       - run:
           command: |
             pip install -r requirements.txt
+      - run:
+          command: |
+            docker cp ./app /app
       - run:
           name: Running tests
           command: |
