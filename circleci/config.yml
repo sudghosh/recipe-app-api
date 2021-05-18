@@ -1,9 +1,0 @@
-version: 2
-
-
-jobs:
-  docker:
-
-steps:
-  - run: pip install docker-compose
-  - run: docker-compose run app sh -c "python manage.py test && flake8"
