@@ -8,13 +8,11 @@ jobs:
       - run:
           command: |
             pip install -r requirements.txt
-            pip install docker-compose
-            pip install docker-client
       - run:
           name: Running tests
           command: |
             ls
-            docker-compose run app sh -c "python manage.py test && flake8"
+            python ./app/manage.py test && flake8
             
             
       - store_artifacts:
