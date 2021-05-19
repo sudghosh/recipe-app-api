@@ -12,6 +12,8 @@ jobs:
           name: Running tests
           command: |
             ls
+            python ./app/manage.py test
+            flake8
             
       - store_artifacts:
           path: test-reports/
