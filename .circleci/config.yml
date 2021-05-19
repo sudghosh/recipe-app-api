@@ -10,9 +10,10 @@ jobs:
             pip install -r requirements.txt
       - run:
           name: Running tests
+          working_directory: ./app
           command: |
             ls
-            python ./app/manage.py test && flake8
+            python manage.py test && flake8
             
             
       - store_artifacts:
