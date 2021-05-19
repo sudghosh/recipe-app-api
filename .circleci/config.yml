@@ -9,6 +9,7 @@ jobs:
           command: |
             pip install -r requirements.txt
             pip install docker-compose
+            pip install docker-client
       - run:
           name: Running tests
           command: |
