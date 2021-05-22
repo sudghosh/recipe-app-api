@@ -12,10 +12,4 @@ jobs:
           name: Running tests
           working_directory: ./app
           command: |
-            ls
             python manage.py test && flake8
-            
-            
-      - store_artifacts:
-          path: test-reports/
-          destination: python_app
