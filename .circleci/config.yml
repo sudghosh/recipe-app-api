@@ -23,4 +23,6 @@ jobs:
           name: Running tests
           working_directory: ./app
           command: |
+            python manage.py wait_for_db &&
+            python manage.py migrate &&
             python manage.py test && flake8
