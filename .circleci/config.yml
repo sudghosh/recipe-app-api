@@ -19,14 +19,15 @@ jobs:
       - run:
           command: |
             pip install -r requirements.txt
+
       - run: 
+          working_directory: ./app
           command: mkdir -p /vol/web/media
       - run: 
           command: mkdir -p /vol/web/static
 
       - run:
           name: Running tests
-          working_directory: ./app
           command: |
             python manage.py wait_for_db &&
             python manage.py migrate &&
