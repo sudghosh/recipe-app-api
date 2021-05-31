@@ -146,7 +146,7 @@ class PrivateRecipeApiTests(TestCase):
         ingredient2 = sample_ingredient(user=self.user, name='Ginger')
         payload = {
             'title': 'Thai Prawn red curry',
-            'ingredients': [ingredient1, ingredient2],
+            'ingredients': [ingredient1.id, ingredient2.id],
             'time_minutes': 20,
             'price': 7.00
         }
