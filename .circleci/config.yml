@@ -19,8 +19,10 @@ jobs:
       - run:
           command: |
             pip install -r requirements.txt
-      - run: mkdir -p /vol/web/media
-      - run: mkdir -p /vol/web/static
+      - run: 
+          command: mkdir -p /vol/web/media
+      - run: 
+          command: mkdir -p /vol/web/static
 
       - run:
           name: Running tests
