@@ -24,6 +24,8 @@ jobs:
           command: |
             sudo mkdir -m 0755 -p /vol/web/media
             sudo mkdir -m 0755 -p /vol/web/static
+            pwd
+            ls
       - run:
           name: Running tests
           working_directory: ./app
