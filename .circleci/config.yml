@@ -1,6 +1,7 @@
 version: 2
 jobs:
   build:
+    working_directory: ./app
     docker:
       - image: circleci/python:3.8
         environment: 
@@ -21,11 +22,9 @@ jobs:
             pip install -r requirements.txt
 
       - run: 
-          working_directory: ./app
-          command: mkdir -p /vol/web/media
-      - run: 
-          command: mkdir -p /vol/web/static
-
+          command: |
+            sudo mkdir -m 0755 -p /vol/web/media
+            sudo mkdir -m 0755 -p /vol/web/static
       - run:
           name: Running tests
           command: |
